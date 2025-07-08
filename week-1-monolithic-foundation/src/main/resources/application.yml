@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: simplecal
+  
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: ADMIN
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+logging:
+  level:
+    com.simplecal: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+
+# Custom application properties
+app:
+  jwt:
+    secret: mySecretKey
+    expiration: 86400000 # 24 hours in milliseconds

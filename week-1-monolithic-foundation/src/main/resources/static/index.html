@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleCal - Calendar App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Authentication Section -->
+    <div id="auth-section" class="auth-container">
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="showLogin()">Login</button>
+            <button class="tab-button" onclick="showRegister()">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="auth-form active">
+            <h2>Login to SimpleCal</h2>
+            <div class="form-group">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="register-form" class="auth-form">
+            <h2>Register for SimpleCal</h2>
+            <div class="form-group">
+                <label for="register-name">Full Name:</label>
+                <input type="text" id="register-name" required>
+            </div>
+            <div class="form-group">
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" required>
+            </div>
+            <div class="form-group">
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" required>
+            </div>
+            <div class="form-group">
+                <label for="register-timezone">Timezone:</label>
+                <select id="register-timezone">
+                    <option value="America/New_York">Eastern Time</option>
+                    <option value="America/Chicago">Central Time</option>
+                    <option value="America/Denver">Mountain Time</option>
+                    <option value="America/Los_Angeles">Pacific Time</option>
+                    <option value="Europe/London">London</option>
+                    <option value="Europe/Paris">Paris</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+
+    <!-- Main Application (hidden until authenticated) -->
+    <div id="main-app" class="hidden">
+        <div class="header">
+            <h1>SimpleCal</h1>
+            <p>Welcome, <span id="user-name"></span>! 
+               <button onclick="logout()" class="btn btn-secondary">Logout</button></p>
+        </div>
+
+        <div class="container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h3>My Calendars</h3>
+                <ul id="calendar-list" class="calendar-list">
+                    <li class="loading">Loading calendars...</li>
+                </ul>
+                
+                <hr>
+                
+                <h4>Create New Calendar</h4>
+                <form id="calendar-form">
+                    <div class="form-group">
+                        <label for="calendar-name">Calendar Name:</label>
+                        <input type="text" id="calendar-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="calendar-color">Color:</label>
+                        <input type="color" id="calendar-color" value="#2196F3">
+                    </div>
+                    <button type="submit" class="btn">Create Calendar</button>
+                </form>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <h3>Events</h3>
+                <div id="message-area"></div>
+                
+                <div id="events-section">
+                    <div id="event-list" class="event-list">
+                        <div class="loading">Select a calendar to view events</div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h4>Create New Event</h4>
+                <form id="event-form">
+                    <div class="form-group">
+                        <label for="event-title">Event Title:</label>
+                        <input type="text" id="event-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-description">Description:</label>
+                        <textarea id="event-description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-start">Start Time:</label>
+                        <input type="datetime-local" id="event-start" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-end">End Time:</label>
+                        <input type="datetime-local" id="event-end" required>
+                    </div>
+                    <button type="submit" class="btn">Create Event</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

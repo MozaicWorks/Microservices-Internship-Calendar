@@ -41,34 +41,38 @@ This hands-on learning program guides you through building a complete calendar a
 ### Quick Start
 1. Clone this repository
    ```bash
-   git clone https://github.com/MozaicWorks/Microservices-Internship-Calendar.git
-   cd Microservices-Internship-Calendar 
+   git clone https://github.com/your-org/microservices-calendar-learning.git
+   cd microservices-calendar-learning
+   ```
 
 2. Start with Week 1
-    ```bash
-    cd week-1-monolithic-foundation
+   ```bash
+   cd week-1-monolithic-foundation
+   ```
 
-Follow the instructions in each week's README.md
+3. Follow the instructions in each week's README.md
 
-📖 Documentation
+## 📖 Documentation
 
-Complete Curriculum - Full 6-week curriculum
-API Specifications - Complete REST API documentation
-Setup Guide - Development environment setup
-Resources - Additional learning materials
+- [Complete Curriculum](./docs/curriculum.md) - Full 6-week curriculum
+- [API Specifications](./docs/api-specifications.md) - Complete REST API documentation
+- [Setup Guide](./docs/setup-guide.md) - Development environment setup
+- [Resources](./docs/resources.md) - Additional learning materials
 
-🎯 Learning Objectives
+## 🎯 Learning Objectives
+
 By the end of this program, you'll be able to:
+- Design and implement microservices architectures
+- Write comprehensive tests for distributed systems
+- Integrate with external APIs securely
+- Set up local development environments with Docker
+- Document APIs professionally with OpenAPI
+- Handle data consistency across services
 
-Design and implement microservices architectures
-Write comprehensive tests for distributed systems
-Integrate with external APIs securely
-Set up local development environments with Docker
-Document APIs professionally with OpenAPI
-Handle data consistency across services
+## 🤝 Contributing
 
-🤝 Contributing
 This is a learning repository. If you find issues or have suggestions for improvements, please open an issue or submit a pull request.
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

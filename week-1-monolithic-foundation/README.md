@@ -33,42 +33,44 @@ mvn clean install
 
 # Run the application
 mvn spring-boot:run
+```
 
-3. Access the Application
+### 3. Access the Application
+- **Web Interface**: http://localhost:8080
+- **H2 Console**: http://localhost:8080/h2-console
+  - JDBC URL: `jdbc:h2:mem:testdb`
+  - Username: `sa`
+  - Password: (leave empty)
 
-Web Interface: http://localhost:8080
-H2 Console: http://localhost:8080/h2-console
-API Documentation: http://localhost:8080/swagger-ui.html (Week 2)
+## 📚 Day-by-Day Instructions
 
-📚 Day-by-Day Instructions
-Day 1: Project Setup and User Management
+### Day 1: Project Setup and User Management
+1. Create Spring Boot project structure
+2. Implement User entity and repository
+3. Create user registration and login endpoints
+4. Add basic authentication
+5. Test with Postman or curl
 
-Create Spring Boot project structure
-Implement User entity and repository
-Create user registration and login endpoints
-Add basic authentication
-Test with Postman or curl
+### Day 2: Calendar and Event Management + UI
+1. Implement Calendar and Event entities
+2. Create REST endpoints for calendar operations
+3. Build simple HTML/JavaScript frontend
+4. Test complete application flow
+5. Add sample data
 
-Day 2: Calendar and Event Management + UI
+## 🧪 Testing Your Implementation
 
-Implement Calendar and Event entities
-Create REST endpoints for calendar operations
-Build simple HTML/JavaScript frontend
-Test complete application flow
-Add sample data
+### Manual Testing Checklist
+- [ ] User can register through API
+- [ ] User can login and receive session token
+- [ ] User can create calendars
+- [ ] User can create events in calendars
+- [ ] Web interface works for all operations
+- [ ] H2 console shows proper data
 
-🧪 Testing Your Implementation
-Manual Testing Checklist
-
- User can register through API
- User can login and receive session token
- User can create calendars
- User can create events in calendars
- Web interface works for all operations
- H2 console shows proper data
-
-API Testing Examples
-bash# Register user
+### API Testing Examples
+```bash
+# Register user
 curl -X POST http://localhost:8080/api/users/register \
   -H "Content-Type: application/json" \
   -d '{"email":"test@example.com","name":"Test User","password":"password123","timezone":"America/New_York"}'
@@ -83,52 +85,28 @@ curl -X POST http://localhost:8080/api/calendars \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -d '{"name":"Work Calendar","color":"#FF5733","ownerId":1}'
-📝 Key Files to Implement
-Core Entities
+```
 
-User.java - User entity with email, name, password, timezone
-Calendar.java - Calendar entity with name, color, owner
-Event.java - Event entity with title, description, times
-
-Controllers
-
-UserController.java - Registration and login endpoints
-CalendarController.java - Calendar CRUD operations
-EventController.java - Event CRUD operations
-
-Services
-
-UserService.java - User business logic and authentication
-CalendarService.java - Calendar business logic
-EventService.java - Event business logic
-
-Frontend
-
-index.html - Main web interface
-app.js - JavaScript for API interactions
-styles.css - Basic styling
-
-🎯 Success Criteria
+## 🎯 Success Criteria
 By the end of Week 1, you should have:
+- ✅ Working Spring Boot application
+- ✅ User registration and authentication
+- ✅ Calendar and event CRUD operations
+- ✅ Functional web interface
+- ✅ All APIs tested and working
 
-✅ Working Spring Boot application
-✅ User registration and authentication
-✅ Calendar and event CRUD operations
-✅ Functional web interface
-✅ All APIs tested and working
+## 🆘 Troubleshooting
 
-🆘 Troubleshooting
-Common Issues
+### Common Issues
+1. **Port already in use**: Change port in `application.yml`
+2. **Database connection issues**: Check H2 configuration
+3. **CORS errors**: Ensure CORS is configured for frontend
+4. **Authentication failures**: Verify token generation and validation
 
-Port already in use: Change port in application.yml
-Database connection issues: Check H2 configuration
-CORS errors: Ensure CORS is configured for frontend
-Authentication failures: Verify token generation and validation
+### Getting Help
+- Check the [Setup Guide](../docs/setup-guide.md)
+- Review [API Specifications](../docs/api-specifications.md)
+- See `starter-template/` for boilerplate code
 
-Getting Help
-
-Check the Setup Guide
-Review API Specifications
-See starter-template/ for boilerplate code
-
-➡️ Next Week
+## ➡️ Next Week
+[Week 2: Testing and Documentation](../week-2-testing-and-documentation/)

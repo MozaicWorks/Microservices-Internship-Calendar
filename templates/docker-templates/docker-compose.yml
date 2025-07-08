@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  # Database services
+  user-db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: userdb
+      POSTGRES_USER: user_service
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+    volumes:
+      - user_data:/var/lib/postgresql/data
+
+  calendar-db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: calendardb
+      POSTGRES_USER: calendar_service
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5434:5432"
+    volumes:
+      - calendar_data:/var/lib/postgresql/data
+
+  # Message broker
+  rabbitmq:
+    image: rabbitmq:3.8-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  # Services (add as you create them)
+  # user-service:
+  #   build: ../user-service
+  #   ports:
+  #     - "8081:8081"
+  #   depends_on:
+  #     - user-db
+
+volumes:
+  user_data:
+  calendar_data:
