@@ -43,3 +43,32 @@ This hands-on learning program guides you through building a complete calendar a
    ```bash
    git clone https://github.com/MozaicWorks/Microservices-Internship-Calendar.git
    cd Microservices-Internship-Calendar 
+
+2. Start with Week 1
+    ```bash
+    cd week-1-monolithic-foundation
+
+Follow the instructions in each week's README.md
+
+📖 Documentation
+
+Complete Curriculum - Full 6-week curriculum
+API Specifications - Complete REST API documentation
+Setup Guide - Development environment setup
+Resources - Additional learning materials
+
+🎯 Learning Objectives
+By the end of this program, you'll be able to:
+
+Design and implement microservices architectures
+Write comprehensive tests for distributed systems
+Integrate with external APIs securely
+Set up local development environments with Docker
+Document APIs professionally with OpenAPI
+Handle data consistency across services
+
+🤝 Contributing
+This is a learning repository. If you find issues or have suggestions for improvements, please open an issue or submit a pull request.
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
