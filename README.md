@@ -69,6 +69,15 @@ By the end of this program, you'll be able to:
 - Document APIs professionally with OpenAPI
 - Handle data consistency across services
 
+## Recommendations
+
+* While it's very tempting to use AI coding assistants to generate the code, try to minimize this as much as possible. Using AI assistants like Github Copilot or ChatGPT will likely help you solve the problems faster, but you will learn much less. So start by writing the code yourself and use documentation before asking assistants for help.
+* Try to commit often in your working copy. In this way, if something doesn't work well you can go back one commit and try again.
+* In general, try to work in small steps
+* Simplify the code as much as possible. The goal of this program is not to implement the full application, but to learn as much as possible. You learn more if you are mindful and go slowly and in a very deliberate way.
+
+
+
 ## 🤝 Contributing
 
 This is a learning repository. If you find issues or have suggestions for improvements, please open an issue or submit a pull request.
